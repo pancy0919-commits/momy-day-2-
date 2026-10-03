@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>給最愛的媽媽</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #fdf6e2;
+            font-family: sans-serif;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* 禮物按鈕區塊 */
+        #gift-box {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        #gift-box:hover {
+            transform: scale(1.1);
+        }
+        .gift-icon {
+            font-size: 80px;
+            margin-bottom: 10px;
+        }
+        .gift-text {
+            font-size: 20px;
+            color: #e76f51;
+            font-weight: bold;
+        }
+
+        /* 滾動字幕特效區塊 (一開始隱藏) */
+        #credits-container {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .credits-content {
+            position: absolute;
+            width: 100%;
+            /* 動畫名稱、時間與往上捲動效果 */
+            animation: scrollUp 15s linear forwards;
+        }
+
+        .credits-content h2 {
+            color: #e76f51;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .credits-content p {
+            font-size: 22px;
+            line-height: 2.2;
+            margin: 15px 0;
+            color: #fff;
+        }
+
+        /* 定義文字往上跑的動畫 */
+        @keyframes scrollUp {
+            0% {
+                top: 100%; /* 從畫面正下方進場 */
+            }
+            100% {
+                top: -100%; /* 滾動到畫面正上方退場 */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 第一步：禮物畫面 -->
+    <div id="gift-box" onclick="openGift()">
+        <div class="gift-icon">🎁</div>
+        <div class="gift-text">點擊這裡打開神秘禮物</div>
+    </div>
+
+    <!-- 第二步：捲動感謝文字 (隱藏直到點擊) -->
+    <div id="credits-container">
+        <div class="credits-content">
+            <h2>★ Thank you momy ★</h2>
+            <p>momy</p>
+            <p>pancy</p>
+            <p>momy i love you</p>
+            <p>happy momy day</p>
+            <p>you can go to the </p>
+            <p>May you be safe, healthy, and happy every day!</p>
+            <p style="color: #e76f51; font-weight: bold; margin-top: 40px;">— 永遠愛你的兒子 —</p>
+        </div>
+    </div>
+
+    <script>
+        function openGift() {
+            // 隱藏禮物盒
+            document.getElementById('gift-box').style.display = 'none';
+            // 顯示滾動字幕容器
+            document.getElementById('credits-container').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
